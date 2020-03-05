@@ -1,0 +1,9 @@
+<p>asasas</p>
+<div class="product-grid">
+  <app-product
+    *ngFor="let products of products"
+    (productClicked)="clickProduct($event)"
+    [product]="products"
+  >
+  </app-product>
+</div>

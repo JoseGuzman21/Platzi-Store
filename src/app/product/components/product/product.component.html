@@ -1,0 +1,5 @@
+<h3 appHighlight> {{product.title | uppercase}} </h3>
+<strong> {{product.price | currency}} </strong>
+<img [src]="product.image" alt="">
+<button (click)="addCart()">Agregar al carrito</button>
+<a [routerLink]="['./', product.id]">Ver detalle</a>
