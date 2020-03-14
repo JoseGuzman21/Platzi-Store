@@ -9,9 +9,7 @@ import { MaterialModule } from './../material/material.module';
 
 @NgModule({
   declarations: [
-    ProductComponent,
-    ProductDetailComponent,
-    ProductsComponent
+  
   ],
   imports: [
     CommonModule,

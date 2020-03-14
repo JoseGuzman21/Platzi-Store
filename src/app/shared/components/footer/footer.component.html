@@ -1,5 +1,59 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-       <span class="span-footer">Esta página se editó por última vez el 09 feb 2020 a las 15:43 hora peruana</span>
-    </mat-toolbar-row>
-</mat-toolbar>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <div class="box">
+                    <h3>Productos</h3>
+                    <ul>
+                        <li>
+                            <a routerLink="/products" [queryParams]="{ type: 'news' }">Nuevos Productos</a>
+                        </li>
+                        <li>
+                            <a routerLink="/products" [queryParams]="{ type: 'offer' }">En oferta</a>
+                        </li>
+                        <li>
+                            <a routerLink="/products" [queryParams]="{ type: 'latest' }">Últimos productos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <div class="box">
+                    <h3>Acerca de PlatziStore</h3>
+                    <ul>
+                        <li><a routerLink="/about-us">Sobre nosotros</a></li>
+                        <li><a routerLink="/stores">Nuestras tiendas</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-4">
+                <div class="box">
+                    <div class="example-form">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Email</mat-label>
+                            <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                                placeholder="Ex. pat@example.com">
+                            <mat-hint>This email is correct</mat-hint>
+                            <mat-error
+                                *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                Please enter a valid email address
+                            </mat-error>
+                            <mat-error *ngIf="emailFormControl.hasError('required')">
+                                Email is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <button mat-raised-button [disabled]="emailFormControl.invalid"
+                    (click)="sendMail()">enviar</button>
+                    <h3>Contacto</h3>
+                    <!-- <mat-form-field>
+                        <input matInput placeholder="Digite su correo" [formControl]="emailField" type="email">
+                        {{emailField.valid}},{{emailField.invalid}}
+                    </mat-form-field>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
