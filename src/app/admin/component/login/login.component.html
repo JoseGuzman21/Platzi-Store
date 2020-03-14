@@ -1,0 +1,30 @@
+
+<form [formGroup]="formLogin" (ngSubmit)="testLogin($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Log in</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-rs">
+                    <mat-form-field>
+                        <input placeholder="user" formControlName="user" matInput type="text" />
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-rs">
+                    <mat-form-field>
+                        <input placeholder="password" formControlName="password" matInput type="password" />
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="formLogin.invalid" mat-raised-button type="submit">
+                Log in
+            </button>
+            <label  for="" > No tienes cuenta, <a (click)="goRegister($event)" id="register" >Registrate</a> </label>
+        </mat-card-actions>
+    </mat-card>
+</form>
